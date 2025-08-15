@@ -328,6 +328,14 @@ function generateSetters(
             usingEvent,
             prop => `toString(${prop})`,
           );
+                  case 'StringEnumTypeAnnotation': // ✅ added here
+    return generateSetter(
+      parentPropertyName,
+      eventProperty.name,
+      propertyParts,
+      usingEvent,
+      prop => `toString(${prop})`,
+    );
         case 'ObjectTypeAnnotation':
           return generateObjectSetter(
             parentPropertyName,
